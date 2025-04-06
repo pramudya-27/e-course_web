@@ -44,8 +44,8 @@ D-Course adalah platform pembelajaran online yang dirancang untuk memudahkan pen
   - Pesan otomatis ditandai sebagai dibaca ketika admin membuka halaman daftar pesan.
 - **Manajemen Permintaan Pembelian**:
   - Tabel daftar permintaan pembelian dengan aksi untuk melihat detail atau menghapus.
-- **Notifikasi Global**:
-  - Notifikasi sukses (hijau) dan error (merah) muncul di bawah navbar di semua halaman admin.
+- **Notifikasi**:
+  - Notifikasi jika ada pesan dari user masuk.
 - **Responsivitas**:
   - Semua halaman responsif, dengan tabel yang dapat di-scroll horizontal pada layar kecil.
   - Tombol dan elemen menyesuaikan ukuran layar untuk pengalaman pengguna yang optimal.
