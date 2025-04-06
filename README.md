@@ -87,5 +87,8 @@ Buka file .env dan sesuaikan konfigurasi database (nama database, username, pass
 Akses Aplikasi
     Buka browser dan kunjungi http://localhost:8000.
 
-### Tampilan
+### Tampilan utama
+![View](public/image2.png)
+
+### Tampilan Admin 
 ![View](public/image.png)
