@@ -1,47 +1,65 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-        <h3>Manage Courses</h3>
-        <a href="{{ route('courses.create') }}" class="btn btn-primary">Add Course</a>
+<div class="admin-container">
+    <div class="admin-header">
+        <h3 class="page-title">Kelola Kursus</h3>
+        <a href="{{ route('courses.create') }}" class="admin-button primary">Tambah Kursus</a>
     </div>
-    <div class="card-body">
-        <table class="table">
+
+    <!-- Notifikasi -->
+    @if (session('success'))
+        <div class="alert-success">{{ session('success') }}</div>
+    @endif
+    @if (session('error'))
+        <div class="alert-error">{{ session('error') }}</div>
+    @endif
+
+    <!-- Tabel Kursus -->
+    <div class="table-scroll">
+        <table class="admin-table course-table">
             <thead>
                 <tr>
-                <th>Thumbnail</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Duration</th>
-                <th>Created By</th>
-                <th>Actions</th>
+                    <th class="thumbnail-col">Thumbnail</th>
+                    <th class="title-col">Judul</th>
+                    <th class="description-col">Deskripsi</th>
+                    <th class="duration-col">Durasi</th>
+                    <th class="created-by-col">Dibuat Oleh</th>
+                    <th class="action-col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($courses as $course)
-                <tr>
-                <td>
-                    @if ($course->thumbnail)
-                        <img src="{{ asset('storage/' . $course->thumbnail) }}" alt="{{ $course->title }}" style="max-width: 100px;">
-                    @else
-                        No Image
-                    @endif
-                </td>
-                    <td>{{ $course->title }}</td>
-                    <td>{{ Str::limit($course->description, 50) }}</td>
-                    <td>{{ $course->duration }} mins</td>
-                    <td>{{ $course->user->name }}</td>
-                    <td>
-                        <a href="{{ route('courses.edit', $course) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('courses.destroy', $course) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
+                @forelse ($courses as $course)
+                    <tr class="table-row">
+                        <td class="thumbnail-col">
+                            @if ($course->thumbnail)
+                                <img src="{{ asset('storage/' . $course->thumbnail) }}" alt="{{ $course->title }}" class="thumbnail-img">
+                            @else
+                                Tidak Ada Gambar
+                            @endif
+                        </td>
+                        <td class="title-col">{{ $course->title }}</td>
+                        <td class="description-col">{{ Str::limit($course->description, 30) }}</td>
+                        <td class="duration-col">{{ $course->duration }} menit</td>
+                        <td class="created-by-col">{{ $course->user->name }}</td>
+                        <td class="action-col">
+                            <div class="button-group">
+                                <a href="{{ route('courses.edit', $course) }}" >
+                                    <button class="admin-button warning">Edit</button>
+                                </a>
+                                <form action="{{ route('courses.destroy', $course) }}" method="POST" class="delete-form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="admin-button danger">Hapus</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Tidak ada kursus ditemukan.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

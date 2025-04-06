@@ -43,6 +43,11 @@ class User extends Authenticatable
     }
 
     protected $fillable = ['name', 'email', 'password', 'is_admin'];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+    
     use Notifiable;
     public function courses()
     {
@@ -53,6 +58,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Registration::class);
     }
+
     use Notifiable;
 
 }

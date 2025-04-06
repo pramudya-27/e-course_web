@@ -47,5 +47,5 @@ public function store(Request $request, Course $course)
     ]);
 
     return redirect()->route('home')->with('success', 'Permintaan pembelian telah dikirim ke admin.');
-}
+    }
 }

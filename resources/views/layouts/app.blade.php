@@ -4,8 +4,10 @@
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>E-Course - Learn Anything</title>
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link rel="stylesheet" href="{{ asset('resources/css/styles.css') }}">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Memuat CSS dan JS melalui Vite -->
     @vite(['resources/css/styles.css', 'resources/js/app.js'])

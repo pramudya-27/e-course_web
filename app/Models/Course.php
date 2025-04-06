@@ -27,4 +27,10 @@ class Course extends Model
     {
     return $this->ratings()->avg('rating') ?: 0;
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
+    
 }

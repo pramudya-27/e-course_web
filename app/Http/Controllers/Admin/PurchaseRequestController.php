@@ -25,4 +25,18 @@ class PurchaseRequestController extends Controller
         $purchaseRequest->update(['status' => 'rejected']);
         return redirect()->back()->with('success', 'Permintaan pembelian ditolak.');
     }
+
+    public function destroy(PurchaseRequest $purchaseRequest)
+    {
+        $purchaseRequest->delete();
+        return redirect()->route('admin.purchase_requests.index')
+            ->with('success', 'Permintaan telah dihapus.');
+    }
+
+    public function destroyAll()
+    {
+        PurchaseRequest::truncate();
+        return redirect()->route('admin.purchase_requests.index')
+            ->with('success', 'Semua permintaan telah dihapus.');
+    }
 }

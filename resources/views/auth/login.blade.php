@@ -20,10 +20,10 @@
                         <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                        {{ __('Remember Me') }}
+                <div class="form-group remember-me-group">
+                    <label class="remember-me-label">
+                <input type="checkbox" name="remember" class="remember-me-checkbox" {{ old('remember') ? 'checked' : '' }}>
+            <span class="remember-me-text">{{ __('Remember Me') }}</span>
                     </label>
                 </div>
                 <button type="submit" class="auth-button">{{ __('Login') }}</button>

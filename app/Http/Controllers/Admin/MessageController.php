@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Models\Message;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -18,5 +20,12 @@ class MessageController extends Controller
     {
         $message->update(['is_read' => true]);
         return view('admin.messages.show', compact('message'));
+    }
+
+    public function destroy(Contact $message)
+    {
+        $message->delete();
+        return redirect()->route('admin.messages.index')
+            ->with('success', 'Pesan telah dihapus.');
     }
 }

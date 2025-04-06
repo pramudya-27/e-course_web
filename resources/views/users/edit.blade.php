@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">
         <h3>Edit User: {{ $user->name }}</h3>
-        <a href="{{ route('users.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('users.index') }}" class="admin-button primary">Back</a>
     </div>
     <div class="card-body">
         <form action="{{ route('users.update', $user) }}" method="POST">
@@ -35,7 +35,7 @@
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Update User</button>
+            <button type="submit" class="admin-button primary">Update User</button>
         </form>
     </div>
 </div>

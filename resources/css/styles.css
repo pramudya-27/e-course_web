@@ -1,3 +1,5 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 /* General Styles */
 body {
     margin: 0;
@@ -434,6 +436,42 @@ body {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+}
+
+.remember-me-group {
+    margin-bottom: 20px;
+}
+
+.remember-me-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me-checkbox {
+    margin-right: 8px; /* Jarak antara checkbox dan teks */
+    width: 16px;
+    height: 16px;
+    accent-color: #6B46C1; /* Warna checkbox sesuai tema */
+    cursor: pointer;
+}
+
+.remember-me-text {
+    font-size: 0.9rem;
+    color: #333;
+    user-select: none; /* Mencegah teks dipilih saat klik */
+}
+
+@media (max-width: 600px) {
+    .remember-me-text {
+        font-size: 0.85rem;
+    }
+
+    .remember-me-checkbox {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
 }
 
 .form-group input,
@@ -941,4 +979,304 @@ body {
 
 .mt-4 {
     margin-top: 20px;
+}
+
+/* Admin Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6B46C1;
+    margin: 0;
+}
+
+/* Table (Gaya Umum untuk Semua Tabel) */
+.table-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: block;
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background: #6B46C1;
+    border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+    background: #563d7c;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-table td {
+    color: #666;
+}
+
+/* Gaya Spesifik untuk Tabel Kelola Kursus */
+.admin-table.course-table {
+    min-width: 600px; /* Lebar minimum tabel lebih kecil */
+}
+
+.admin-table.course-table th,
+.admin-table.course-table td {
+    padding: 10px 12px;
+    white-space: nowrap; /* Mencegah teks membungkus */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Menambahkan elipsis (...) untuk teks panjang */
+}
+
+/* Lebar Kolom untuk Tabel Kelola Kursus */
+.admin-table.course-table .thumbnail-col {
+    width: 80px; /* Lebar tetap untuk kolom thumbnail */
+}
+
+.admin-table.course-table .title-col {
+    width: 150px;
+}
+
+.admin-table.course-table .description-col {
+    width: 200px;
+}
+
+.admin-table.course-table .duration-col {
+    width: 100px;
+}
+
+.admin-table.course-table .created-by-col {
+    width: 120px;
+}
+
+.admin-table.course-table .action-col {
+    width: 150px;
+}
+
+/* Efek Hover pada Baris */
+.table-row {
+    transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+    background-color: #f1f1f1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Thumbnail untuk Tabel Kelola Kursus */
+.admin-table.course-table .thumbnail-img {
+    width: 50px; /* Ukuran tetap yang kecil */
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-button {
+    display: inline-block;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-button:hover {
+    transform: scale(1.05);
+}
+
+.admin-button.primary {
+    background-color: #6B46C1;
+    color: white;
+}
+
+.admin-button.primary:hover {
+    background-color: #563d7c;
+}
+
+.admin-button.warning {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.admin-button.warning:hover {
+    background-color: #e0a800;
+}
+
+.admin-button.danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.admin-button.danger:hover {
+    background-color: #c82333;
+}
+
+/* Alerts */
+.alert-success {
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.alert-error {
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Responsivitas */
+@media (max-width: 600px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .admin-table.course-table th,
+    .admin-table.course-table td {
+        padding: 8px 10px;
+    }
+
+    .admin-table.course-table .thumbnail-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+.back-to-dashboard {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+}
+.form-select.custom-select {
+    appearance: none;
+    background: #6B46C1;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.form-select.custom-select:hover {
+    background: #6B46C1;
+}
+.form-select.custom-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #6B46C1;
+}
+
+.notification-bell {
+    position: relative;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.notification-bell:hover {
+    color: #6B46C1;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .navbar-menu.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-item {
+        margin: 10px 20px;
+    }
+
+    .auth-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

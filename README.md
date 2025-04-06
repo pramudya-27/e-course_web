@@ -1,42 +1,74 @@
-# E-Course - Platform Pembelajaran Online ![Ecourse logo](public/favicon.svg)
+# D-Course - Platform Pembelajaran Online ![Ecourse logo](public/favicon.svg)
 
-E-Course adalah platform pembelajaran online yang dirancang untuk memudahkan pengguna dalam mendaftar dan mengikuti kursus secara daring. Platform ini menyediakan antarmuka yang intuitif untuk pengguna biasa dan administrator, dibangun menggunakan teknologi modern seperti Laravel.
+D-Course adalah platform pembelajaran online yang dirancang untuk memudahkan pengguna dalam mendaftar dan mengikuti kursus secara daring. Platform ini menyediakan antarmuka yang intuitif untuk pengguna biasa dan administrator, dibangun menggunakan teknologi modern seperti Laravel.
 
-## Fungsi Utama
+## Fungsi Utama Web
 
-- **Pendaftaran Kursus**: Pengguna dapat memilih dan mendaftar ke kursus yang tersedia serta mengakses materi pembelajaran.
-- **Manajemen Kursus**: Administrator dapat menambah, mengedit, atau menghapus kursus sesuai kebutuhan.
-- **Permintaan Pembelian**: Pengguna dapat mengajukan pembelian kursus, yang kemudian akan ditinjau oleh admin untuk persetujuan.
-- **Dashboard Admin**: Admin memiliki akses ke dashboard untuk mengelola pengguna, kursus, dan melihat statistik.
+### Untuk Pengguna
+- **Melihat Daftar Kursus**: Pengguna dapat melihat daftar kursus yang tersedia di halaman utama.
+- **Mengirim Pesan Kontak**: Pengguna dapat mengirim pesan ke admin melalui halaman kontak.
+- **Permintaan Pembelian Kursus**: Pengguna dapat mengajukan permintaan pembelian untuk kursus tertentu.
+
+### Untuk Admin
+- **Manajemen Kursus**: Admin dapat menambah, mengedit, dan menghapus kursus, termasuk informasi seperti judul, deskripsi, durasi, thumbnail, link tema, dan harga.
+- **Manajemen Pengguna**: Admin dapat melihat daftar pengguna dan mengelola data mereka.
+- **Manajemen Pesan Kontak**: Admin dapat melihat, membaca detail, dan menghapus pesan yang dikirim oleh pengguna.
+- **Manajemen Permintaan Pembelian**: Admin dapat melihat dan mengelola permintaan pembelian kursus dari pengguna.
+- **Dashboard Admin**: Admin memiliki dashboard untuk melihat ringkasan data dan navigasi cepat ke fitur manajemen.
 
 ## Fitur Utama
 
-- **Autentikasi Pengguna**: Fitur registrasi, login, dan logout untuk keamanan akses.
-- **Pencarian Kursus**: Pengguna dapat mencari kursus berdasarkan kata kunci tertentu.
-- **Pendaftaran dan Pembatalan**: Pengguna dapat mendaftar atau membatalkan pendaftaran kursus dengan mudah.
-- **Permintaan Pembelian**: Sistem pengajuan pembelian kursus dengan proses persetujuan admin.
-- **Manajemen Kursus**: Admin dapat mengatur kursus, termasuk menambahkan deskripsi dan thumbnail.
-- **Manajemen Pengguna**: Admin dapat melihat dan mengelola daftar pengguna yang terdaftar.
-- **Pesan Kontak**: Pengguna dapat mengirim pesan yang akan diterima dan ditanggapi oleh admin.
-- **Desain Responsif**: Antarmuka yang ramah pengguna dan dapat diakses di berbagai perangkat.
+### Fitur Pengguna
+- **Halaman Kursus**: Menampilkan daftar kursus dalam format kartu yang responsif.
+- **Formulir Kontak**: Pengguna dapat mengirimkan pesan kepada admin melalui halaman kontak.
+- **Permintaan Pembelian**: Pengguna dapat mengajukan permintaan pembelian kursus dengan mengisi formulir.
+
+### Fitur Admin
+- **Dashboard Admin**:
+  - Ringkasan jumlah kursus, pengguna, pesan, dan permintaan pembelian.
+  - Navigasi cepat ke halaman manajemen.
+- **Manajemen Kursus**:
+  - Tabel interaktif dengan thumbnail kecil (50px x 50px) yang tidak membesar.
+  - Kolom: Thumbnail, Judul, Deskripsi, Durasi, Dibuat Oleh, dan Aksi (Edit/Hapus).
+  - Efek hover pada baris tabel untuk interaktivitas.
+  - Konfirmasi hapus menggunakan SweetAlert.
+  - Formulir tambah dan edit kursus dengan validasi error.
+  - Tombol "Kembali ke Dashboard" di pojok kanan atas pada halaman tambah/edit kursus.
+- **Manajemen Pengguna**:
+  - Tabel daftar pengguna dengan aksi untuk melihat detail atau menghapus.
+- **Manajemen Pesan Kontak**:
+  - Tabel daftar pesan dengan aksi untuk melihat detail atau menghapus.
+  - Halaman detail pesan dengan tampilan rapi (label berwarna ungu).
+  - Notifikasi lonceng di navbar dengan ikon `bi bi-bell` untuk pesan baru.
+  - Badge merah menunjukkan jumlah pesan belum dibaca.
+  - Pesan otomatis ditandai sebagai dibaca ketika admin membuka halaman daftar pesan.
+- **Manajemen Permintaan Pembelian**:
+  - Tabel daftar permintaan pembelian dengan aksi untuk melihat detail atau menghapus.
+- **Notifikasi Global**:
+  - Notifikasi sukses (hijau) dan error (merah) muncul di bawah navbar di semua halaman admin.
+- **Responsivitas**:
+  - Semua halaman responsif, dengan tabel yang dapat di-scroll horizontal pada layar kecil.
+  - Tombol dan elemen menyesuaikan ukuran layar untuk pengalaman pengguna yang optimal.
 
 ## Teknologi yang Digunakan
 
-- **Backend**: Laravel 8
-- **Frontend**: Blade Templates, CSS Kustom, JavaScript
+- **Backend**: Laravel 10 (PHP 8.1+)
+- **Frontend**:
+  - Blade templating engine
+  - CSS kustom (`styles.css`)
+  - Bootstrap Icons untuk ikon (contoh: `bi bi-bell`)
+  - SweetAlert2 untuk konfirmasi hapus interaktif
 - **Database**: MySQL
-- **Dependensi**: Composer, NPM
+- **Asset Management**: Vite untuk kompilasi CSS dan JS
 
-## Cara Menjalankan Proyek
+## Prasyarat
 
-Berikut adalah langkah-langkah untuk menjalankan proyek E-Course di komputer lokal Anda:
-
-### Prasyarat
-
-- PHP versi 7.3 atau lebih tinggi
+Untuk menjalankan proyek ini, pastikan Anda memiliki:
+- PHP 8.1 atau lebih tinggi
 - Composer
-- Node.js & NPM
+- Node.js dan npm
 - MySQL
+- Server lokal (contoh: Laravel Artisan atau XAMPP)
 
 ### Langkah-langkah Instalasi
 
