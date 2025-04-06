@@ -74,7 +74,7 @@ Untuk menjalankan proyek ini, pastikan Anda memiliki:
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/username/e-course.git
+   git clone https://github.com/pramudya-27/e-course_web.git
    cd e-course
 
 2. **Instal Dependensi PHP**
