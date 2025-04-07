@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $fillable = ['title', 'description', 'duration', 'user_id', 'price', 'thumbnail', 'theme_link'];
+    protected $fillable = ['title', 'description', 'duration', 'user_id', 'price',  'thumbnail', 'theme_link'];
 
     public function user()
     {
@@ -16,16 +16,6 @@ class Course extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'registrations', 'course_id', 'user_id')->withTimestamps();
-    }
-
-    public function ratings()
-    {
-    return $this->hasMany(CourseRating::class);
-    }
-
-    public function averageRating()
-    {
-    return $this->ratings()->avg('rating') ?: 0;
     }
 
     public function registrations()

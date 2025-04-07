@@ -40,7 +40,7 @@
                         </td>
                         <td class="title-col">{{ $course->title }}</td>
                         <td class="description-col">{{ Str::limit($course->description, 30) }}</td>
-                        <td class="duration-col">{{ $course->duration }} menit</td>
+                        <td class="duration-col">{{ $course->duration }} jam</td>
                         <td class="created-by-col">{{ $course->user->name }}</td>
                         <td class="action-col">
                             <div class="button-group">

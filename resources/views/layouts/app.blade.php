@@ -9,6 +9,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link rel="stylesheet" href="{{ asset('resources/css/styles.css') }}">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Memuat CSS dan JS melalui Vite -->
     @vite(['resources/css/styles.css', 'resources/js/app.js'])
 </head>

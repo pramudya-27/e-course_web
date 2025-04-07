@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PurchaseRequestController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CourseRatingController;
 
 // Route untuk tampilan utama (publik)
 Route::get('/', function () {
@@ -56,7 +57,6 @@ Route::post('/courses/{course}/confirm', [RegistrationController::class, 'confir
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
-Route::post('/courses/{course}/rate', [App\Http\Controllers\CourseRatingController::class, 'store'])->middleware('auth')->name('courses.rate');
 
 // Route autentikasi (dari Laravel UI)
 Auth::routes();

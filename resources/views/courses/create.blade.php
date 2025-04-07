@@ -34,7 +34,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="duration" class="form-label">Durasi (menit)</label>
+                <label for="duration" class="form-label">Durasi (jam)</label>
                 <input type="number" name="duration" id="duration" class="form-input @error('duration') is-invalid @enderror" value="{{ old('duration') }}" required>
                 @error('duration')
                     <div class="invalid-feedback">{{ $message }}</div>
